@@ -59,7 +59,7 @@ export function PNLCard({ xp, estimatedValue, selectedCharacter, onCharacterSele
     };
 
     const handleShare = () => {
-        const text = `I'm estimating my Paradex Airdrop! 🪂\n\nXP: ${xp}\nEst. Value: $${estimatedValue}\n\nCheck yours at: xparadex.xyz @paradex #Paradex`;
+        const text = `I'm estimating my Paradex Airdrop! 🪂\n\nXP: ${xp}\nEst. Value: $${estimatedValue}\n\nCheck yours at: xparadex.xyz @paradex \n\nParadexio`;
         const url = `https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}`;
         window.open(url, '_blank');
     };
