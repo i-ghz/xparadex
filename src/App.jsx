@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Analytics } from "@vercel/analytics/react";
 import { XPInput } from './components/XPInput';
 import { ValuationGrid } from './components/ValuationGrid';
 import { PNLCard } from './components/PNLCard';
@@ -56,6 +57,7 @@ function App() {
       </footer>
 
       <FundingViewAd />
+      <Analytics />
     </div>
   );
 }
