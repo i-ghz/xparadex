@@ -4,6 +4,7 @@ import { XPInput } from './components/XPInput';
 import { ValuationGrid } from './components/ValuationGrid';
 import { PNLCard } from './components/PNLCard';
 import { MediaKit } from './components/MediaKit';
+import { Tokenomics } from './components/Tokenomics';
 import { FundingViewAd } from './components/FundingViewAd';
 import { useAirdropCalculator, SEASONS } from './hooks/useAirdropCalculator';
 import { SeasonSelector } from './components/SeasonSelector';
@@ -61,6 +62,10 @@ function App() {
                 season={activeSeason}
               />
             </div>
+
+            <div className="w-full h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
+
+            <Tokenomics />
 
             <div className="w-full h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
 
