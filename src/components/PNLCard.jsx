@@ -72,7 +72,7 @@ export function PNLCard({ xp, estimatedValue, selectedCharacter, onCharacterSele
                     <button
                         key={index}
                         onClick={() => onCharacterSelect(char)}
-                        className={`relative rounded-xl overflow-hidden border-2 transition-all w-20 h-20 md:w-24 md:h-24 flex-shrink-0 ${selectedCharacter === char ? 'border-paradex-primary shadow-[0_0_15px_rgba(139,92,246,0.5)]' : 'border-white/10 hover:border-white/30'
+                        className={`relative rounded-xl overflow-hidden border-2 transition-all w-20 h-20 md:w-24 md:h-24 flex-shrink-0 ${selectedCharacter === char ? 'border-paradex-primary shadow-[0_0_15px_rgba(34,211,238,0.5)]' : 'border-white/10 hover:border-white/30'
                             }`}
                     >
                         <img src={char} alt={`Character ${index + 1}`} className="w-full h-full object-cover" />
@@ -84,12 +84,12 @@ export function PNLCard({ xp, estimatedValue, selectedCharacter, onCharacterSele
             <div className="relative group">
                 <div
                     ref={cardRef}
-                    className="w-[600px] h-[337px] bg-[#120f29] relative overflow-hidden flex flex-col shadow-2xl rounded-xl"
-                    style={{ backgroundImage: 'radial-gradient(circle at 50% 100%, #2d1b4e 0%, #120f29 100%)' }}
+                    className="w-[600px] h-[337px] bg-[#000000] relative overflow-hidden flex flex-col shadow-2xl rounded-xl"
+                    style={{ backgroundImage: 'radial-gradient(circle at 50% 100%, #164e63 0%, #000000 100%)' }}
                 >
                     {/* Background Graph (Simplified SVG) */}
                     <svg className="absolute bottom-0 left-0 w-full h-2/3 opacity-20" viewBox="0 0 100 50" preserveAspectRatio="none">
-                        <path d="M0 50 L0 40 Q 20 45 40 30 T 80 10 L 100 0 L 100 50 Z" fill="#8b5cf6" />
+                        <path d="M0 50 L0 40 Q 20 45 40 30 T 80 10 L 100 0 L 100 50 Z" fill="#22d3ee" />
                     </svg>
 
                     {/* Logo Top Left */}

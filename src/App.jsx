@@ -16,9 +16,9 @@ function App() {
   const cardValue = calculations.find(c => c.label === '1B')?.estimatedValue?.toLocaleString(undefined, { minimumFractionDigits: 0, maximumFractionDigits: 0 }) || '0';
 
   return (
-    <div className="min-h-screen flex flex-col items-center py-12 px-4 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-[#2d1b4e] via-[#120f29] to-[#000000] overflow-x-hidden">
+    <div className="min-h-screen flex flex-col items-center py-12 px-4 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-[#083344] via-[#000000] to-[#000000] overflow-x-hidden">
       <header className="mb-12 text-center relative z-10">
-        <div className="inline-block mb-6 p-3 bg-white/5 rounded-2xl backdrop-blur-md border border-white/10 shadow-[0_0_20px_rgba(139,92,246,0.2)]">
+        <div className="inline-block mb-6 p-3 bg-white/5 rounded-2xl backdrop-blur-md border border-white/10 shadow-[0_0_20px_rgba(34,211,238,0.2)]">
           <img src="/assets/logo.png" alt="Paradex" className="h-10 w-auto" />
         </div>
         <h1 className="text-4xl md:text-6xl font-black bg-clip-text text-transparent bg-gradient-to-b from-white via-white to-white/50 tracking-tight">

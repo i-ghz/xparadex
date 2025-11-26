@@ -1,9 +1,9 @@
 @import "tailwindcss";
 
 @theme {
-  --color-paradex-bg: #120f29;
-  --color-paradex-primary: #8b5cf6;
-  --color-paradex-accent: #c084fc;
+  --color-paradex-bg: #000000;
+  --color-paradex-primary: #22d3ee;
+  --color-paradex-accent: #67e8f9;
   --font-sans: 'Inter', sans-serif;
 }
 
@@ -21,7 +21,7 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-  background: #120f29;
+  background: #000000;
 }
 
 ::-webkit-scrollbar-thumb {

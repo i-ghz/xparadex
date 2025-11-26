@@ -19,7 +19,7 @@ export function XPInput({ value, onChange }) {
                     value={value}
                     onChange={handleChange}
                     placeholder="0"
-                    className="w-full bg-transparent text-center text-6xl md:text-8xl font-bold text-white placeholder-white/20 focus:outline-none border-b-2 border-white/10 focus:border-paradex-primary transition-all duration-300 py-4 focus:shadow-[0_10px_40px_-10px_rgba(139,92,246,0.5)]"
+                    className="w-full bg-transparent text-center text-6xl md:text-8xl font-bold text-white placeholder-white/20 focus:outline-none border-b-2 border-white/10 focus:border-paradex-primary transition-all duration-300 py-4 focus:shadow-[0_10px_40px_-10px_rgba(34,211,238,0.5)]"
                     autoComplete="off"
                 />
                 <div className="absolute top-1/2 right-4 -translate-y-1/2 text-gray-600 font-bold text-xl pointer-events-none hidden md:block">
