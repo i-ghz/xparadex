@@ -5,12 +5,16 @@ import { ValuationGrid } from './components/ValuationGrid';
 import { PNLCard } from './components/PNLCard';
 import { MediaKit } from './components/MediaKit';
 import { FundingViewAd } from './components/FundingViewAd';
-import { useAirdropCalculator } from './hooks/useAirdropCalculator';
+import { useAirdropCalculator, SEASONS } from './hooks/useAirdropCalculator';
+import { SeasonSelector } from './components/SeasonSelector';
 
 function App() {
   const [xp, setXp] = useState('');
+  const [currentSeason, setCurrentSeason] = useState('S2');
   const [selectedCharacter, setSelectedCharacter] = useState('/assets/character1.png');
-  const calculations = useAirdropCalculator(xp);
+
+  const calculations = useAirdropCalculator(xp, currentSeason);
+  const activeSeason = SEASONS[currentSeason];
 
   // Default to 1B FDV for the card if not specified, or pick the middle one
   const cardValue = calculations.find(c => c.label === '1B')?.estimatedValue?.toLocaleString(undefined, { minimumFractionDigits: 0, maximumFractionDigits: 0 }) || '0';
@@ -27,7 +31,19 @@ function App() {
       </header>
 
       <main className="w-full flex-1 flex flex-col items-center gap-16 pb-20">
-        <XPInput value={xp} onChange={setXp} />
+        <div className="w-full flex flex-col items-center gap-8">
+          <SeasonSelector
+            seasons={SEASONS}
+            currentSeason={currentSeason}
+            onSelect={setCurrentSeason}
+          />
+          <XPInput
+            value={xp}
+            onChange={setXp}
+            label={activeSeason.inputLabel}
+            season={activeSeason}
+          />
+        </div>
 
         {xp && parseFloat(xp.replace(/,/g, '')) > 0 && (
           <>
@@ -42,6 +58,7 @@ function App() {
                 estimatedValue={cardValue}
                 selectedCharacter={selectedCharacter}
                 onCharacterSelect={setSelectedCharacter}
+                season={activeSeason}
               />
             </div>
 

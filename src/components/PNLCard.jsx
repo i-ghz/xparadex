@@ -12,7 +12,7 @@ const CHARACTERS = [
     '/assets/character7.png',
 ];
 
-export function PNLCard({ xp, estimatedValue, selectedCharacter, onCharacterSelect }) {
+export function PNLCard({ xp, estimatedValue, selectedCharacter, onCharacterSelect, season }) {
     const cardRef = useRef(null);
     const [isGenerating, setIsGenerating] = useState(false);
     const [isCopied, setIsCopied] = useState(false);
@@ -59,7 +59,8 @@ export function PNLCard({ xp, estimatedValue, selectedCharacter, onCharacterSele
     };
 
     const handleShare = () => {
-        const text = `I'm estimating my Paradex Airdrop! 🪂\n\nXP: ${xp}\nEst. Value: $${estimatedValue}\n\nCheck yours at: xparadex.xyz @paradex \n\nParadexio`;
+        const unit = season?.id === 'TAP' ? 'Points' : 'XP';
+        const text = `I'm estimating my Paradex Airdrop! 🪂\n\n${season?.label}\n${unit}: ${xp}\nEst. Value: $${estimatedValue}\n\nCheck yours at: xparadex.xyz @paradex \n\nParadexio`;
         const url = `https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}`;
         window.open(url, '_blank');
     };
@@ -109,7 +110,7 @@ export function PNLCard({ xp, estimatedValue, selectedCharacter, onCharacterSele
                             ${estimatedValue}
                         </span>
                         <div className="mt-4 px-4 py-1 bg-white/10 rounded-full border border-white/10 backdrop-blur-md">
-                            <span className="text-paradex-accent font-bold">{xp} XP</span>
+                            <span className="text-paradex-accent font-bold">{xp} {season?.id === 'TAP' ? 'PTS' : 'XP'}</span>
                         </div>
                     </div>
 

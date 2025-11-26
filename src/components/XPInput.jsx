@@ -1,6 +1,6 @@
 import React from 'react';
 
-export function XPInput({ value, onChange }) {
+export function XPInput({ value, onChange, label, season }) {
     const handleChange = (e) => {
         // Allow only numbers and commas
         const val = e.target.value.replace(/[^0-9,]/g, '');
@@ -10,7 +10,7 @@ export function XPInput({ value, onChange }) {
     return (
         <div className="flex flex-col items-center justify-center space-y-4 w-full max-w-xl mx-auto p-6">
             <label htmlFor="xp-input" className="text-gray-400 text-lg font-medium tracking-wide uppercase">
-                Enter your Season 2 XP
+                {label}
             </label>
             <div className="relative w-full">
                 <input
@@ -23,11 +23,11 @@ export function XPInput({ value, onChange }) {
                     autoComplete="off"
                 />
                 <div className="absolute top-1/2 right-4 -translate-y-1/2 text-gray-600 font-bold text-xl pointer-events-none hidden md:block">
-                    XP
+                    {season?.id === 'TAP' ? 'PTS' : 'XP'}
                 </div>
             </div>
             <p className="text-gray-500 text-sm">
-                Based on estimated 230M Total XP & 20% Supply Allocation
+                Based on estimated {season?.totalPoints?.toLocaleString()} Total {season?.id === 'TAP' ? 'Points' : 'XP'} & {(season?.allocation * 100)}% Supply Allocation
             </p>
         </div>
     );

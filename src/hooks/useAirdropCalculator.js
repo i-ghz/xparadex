@@ -1,41 +1,46 @@
 import { useMemo } from 'react';
 
-const TOTAL_SUPPLY_XP = 230_000_000;
-const AIRDROP_ALLOCATION = 0.20; // 20%
+export const SEASONS = {
+    S1: {
+        id: 'S1',
+        label: 'Pre-Season + Season 1',
+        totalPoints: 100_300_000,
+        allocation: 0.05, // 5%
+        inputLabel: 'Enter your S1 Points'
+    },
+    S2: {
+        id: 'S2',
+        label: 'Season 2',
+        totalPoints: 230_000_000,
+        allocation: 0.20, // 20%
+        inputLabel: 'Enter your Season 2 XP'
+    },
+    TAP: {
+        id: 'TAP',
+        label: 'TAP Program',
+        totalPoints: 14_000_000,
+        allocation: 0.01, // 1%
+        inputLabel: 'Enter your TAP Points'
+    }
+};
 
-export const FDV_SCENARIOS = [
-    { label: '500M', value: 500_000_000 },
-    { label: '750M', value: 750_000_000 },
-    { label: '1B', value: 1_000_000_000 },
-    { label: '10B', value: 10_000_000_000 },
-    { label: '100B', value: 100_000_000_000 },
-];
-
-export function useAirdropCalculator(xp) {
+export function useAirdropCalculator(xp, seasonId = 'S2') {
     const calculations = useMemo(() => {
         const numericXp = parseFloat(xp.toString().replace(/,/g, '')) || 0;
+        const season = SEASONS[seasonId];
 
-        // Formula: (UserXP / TotalXP) * (TotalSupply * Allocation) * (FDV / TotalSupply)
-        // Simplified: UserXP * (Allocation / TotalXP) * FDV
-        // Wait, let's re-verify the formula from the user request:
-        // "supply total d'xp est estimé à 300M et 20% du supply devrait etre distribué à ces XP"
-        // So 20% of the TOKEN supply is for the 300M XP.
-        // Token Price = FDV / Total Token Supply
-        // User Tokens = (UserXP / 300M) * (0.20 * Total Token Supply)
-        // User Value = User Tokens * Token Price
-        //            = (UserXP / 300M) * (0.20 * Total Token Supply) * (FDV / Total Token Supply)
-        //            = (UserXP / 300M) * 0.20 * FDV
+        if (!season) return [];
 
-        const shareOfXp = numericXp / TOTAL_SUPPLY_XP;
+        const shareOfXp = numericXp / season.totalPoints;
 
         return FDV_SCENARIOS.map(scenario => {
-            const estimatedValue = shareOfXp * AIRDROP_ALLOCATION * scenario.value;
+            const estimatedValue = shareOfXp * season.allocation * scenario.value;
             return {
                 ...scenario,
                 estimatedValue
             };
         });
-    }, [xp]);
+    }, [xp, seasonId]);
 
     return calculations;
 }
