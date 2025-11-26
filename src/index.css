@@ -8,7 +8,7 @@
 }
 
 body {
-  /* background-color: var(--color-paradex-bg); */
+  background-color: #000000;
   color: white;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
