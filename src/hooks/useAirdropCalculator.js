@@ -24,6 +24,14 @@ export const SEASONS = {
     }
 };
 
+export const FDV_SCENARIOS = [
+    { label: '500M', value: 500_000_000 },
+    { label: '750M', value: 750_000_000 },
+    { label: '1B', value: 1_000_000_000 },
+    { label: '10B', value: 10_000_000_000 },
+    { label: '100B', value: 100_000_000_000 },
+];
+
 export function useAirdropCalculator(xp, seasonId = 'S2') {
     const calculations = useMemo(() => {
         const numericXp = parseFloat(xp.toString().replace(/,/g, '')) || 0;
