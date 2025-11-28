@@ -1,5 +1,4 @@
-```
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 
 const MARKETS = [
@@ -68,11 +67,10 @@ export function SentimentPoll() {
                             <div className="col-span-1 md:col-span-6 flex gap-3">
                                 <button
                                     onClick={() => handleVote(index, 'yes')}
-                                    className={`flex - 1 flex flex - col items - center justify - center py - 2 rounded - lg border transition - all ${
-    selectedVote?.index === index && selectedVote?.type === 'yes'
-        ? 'bg-[#10b981] border-[#10b981] text-white shadow-[0_0_15px_rgba(16,185,129,0.4)]'
-        : 'bg-[#10b981]/10 border-[#10b981]/20 text-[#10b981] hover:bg-[#10b981]/20'
-} `}
+                                    className={`flex-1 flex flex-col items-center justify-center py-2 rounded-lg border transition-all ${selectedVote?.index === index && selectedVote?.type === 'yes'
+                                            ? 'bg-[#10b981] border-[#10b981] text-white shadow-[0_0_15px_rgba(16,185,129,0.4)]'
+                                            : 'bg-[#10b981]/10 border-[#10b981]/20 text-[#10b981] hover:bg-[#10b981]/20'
+                                        }`}
                                 >
                                     <span className="text-xs font-bold uppercase">Buy Yes</span>
                                     <span className="text-sm font-bold">{market.yes}¢</span>
@@ -80,11 +78,10 @@ export function SentimentPoll() {
 
                                 <button
                                     onClick={() => handleVote(index, 'no')}
-                                    className={`flex - 1 flex flex - col items - center justify - center py - 2 rounded - lg border transition - all ${
-    selectedVote?.index === index && selectedVote?.type === 'no'
-        ? 'bg-[#ef4444] border-[#ef4444] text-white shadow-[0_0_15px_rgba(239,68,68,0.4)]'
-        : 'bg-[#ef4444]/10 border-[#ef4444]/20 text-[#ef4444] hover:bg-[#ef4444]/20'
-} `}
+                                    className={`flex-1 flex flex-col items-center justify-center py-2 rounded-lg border transition-all ${selectedVote?.index === index && selectedVote?.type === 'no'
+                                            ? 'bg-[#ef4444] border-[#ef4444] text-white shadow-[0_0_15px_rgba(239,68,68,0.4)]'
+                                            : 'bg-[#ef4444]/10 border-[#ef4444]/20 text-[#ef4444] hover:bg-[#ef4444]/20'
+                                        }`}
                                 >
                                     <span className="text-xs font-bold uppercase">Buy No</span>
                                     <span className="text-sm font-bold">{market.no}¢</span>
@@ -97,4 +94,3 @@ export function SentimentPoll() {
         </div>
     );
 }
-```
