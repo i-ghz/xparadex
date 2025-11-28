@@ -83,14 +83,14 @@ function App() {
             </div>
 
             <div className="w-full h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
-
-            <Tokenomics />
-
-            <div className="w-full h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
-
-            <MediaKit />
           </>
         )}
+
+        <Tokenomics />
+
+        <div className="w-full h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
+
+        <MediaKit />
       </main>
 
       <footer className="mt-auto py-8 text-center text-gray-600 text-sm">
