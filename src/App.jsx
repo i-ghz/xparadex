@@ -44,19 +44,25 @@ function App() {
         </a>
       </header>
 
-      <main className="w-full flex-1 flex flex-col items-center gap-16 pb-20">
-        <div className="w-full flex flex-col items-center gap-8">
-          <SeasonSelector
-            seasons={SEASONS}
-            currentSeason={currentSeason}
-            onSelect={setCurrentSeason}
-          />
-          <XPInput
-            value={xp}
-            onChange={setXp}
-            label={activeSeason.inputLabel}
-            season={activeSeason}
-          />
+      <main className="w-full flex-1 flex flex-col items-center gap-16 pb-20 max-w-7xl mx-auto px-4">
+        <div className="w-full grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+          <div className="flex flex-col items-center gap-8 w-full">
+            <SeasonSelector
+              seasons={SEASONS}
+              currentSeason={currentSeason}
+              onSelect={setCurrentSeason}
+            />
+            <XPInput
+              value={xp}
+              onChange={setXp}
+              label={activeSeason.inputLabel}
+              season={activeSeason}
+            />
+          </div>
+
+          <div className="w-full flex justify-center lg:justify-start lg:pt-8">
+            <SentimentPoll />
+          </div>
         </div>
 
         {xp && parseFloat(xp.replace(/,/g, '')) > 0 && (
@@ -75,10 +81,6 @@ function App() {
                 season={activeSeason}
               />
             </div>
-
-            <div className="w-full h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
-
-            <SentimentPoll />
 
             <div className="w-full h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
 
