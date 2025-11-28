@@ -1,96 +1,96 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 
-const MARKETS = [
-    { label: '$750M', chance: 31, yes: 32, no: 71, vol: '$37,736' },
-    { label: '$1.5B', chance: 15, yes: 15, no: 86, vol: '$17,341' },
-    { label: '$3B', chance: 10, yes: 15.6, no: 95.0, vol: '$7,823' },
-    { label: '$5B', chance: 5, yes: 5.0, no: 95.1, vol: '$3,648' },
-    { label: '$10B', chance: 4, yes: 5.8, no: 96.9, vol: '$6,732' },
+const OPTIONS = [
+    { id: '750m', label: 'Bearish ($750M)', color: '#ef4444', percentage: 31 },
+    { id: '1.5b', label: 'Conservative ($1.5B)', color: '#f59e0b', percentage: 15 },
+    { id: '3b', label: 'Optimistic ($3B)', color: '#22d3ee', percentage: 10 },
+    { id: '10b', label: 'Bullish ($10B)', color: '#10b981', percentage: 4 },
 ];
 
 export function SentimentPoll() {
-    const [selectedVote, setSelectedVote] = useState(null); // { index, type: 'yes'|'no' }
+    const [hasVoted, setHasVoted] = useState(false);
+    const [selectedOption, setSelectedOption] = useState(null);
 
-    const handleVote = (index, type) => {
-        setSelectedVote({ index, type });
-        // In a real app, this would trigger a transaction or API call
+    useEffect(() => {
+        const vote = localStorage.getItem('paradex_sentiment_vote');
+        if (vote) {
+            setHasVoted(true);
+            setSelectedOption(vote);
+        }
+    }, []);
+
+    const handleVote = (id) => {
+        setHasVoted(true);
+        setSelectedOption(id);
+        localStorage.setItem('paradex_sentiment_vote', id);
     };
 
     return (
-        <div className="w-full max-w-2xl mx-auto bg-[#000000] border border-white/10 rounded-2xl overflow-hidden font-sans">
-            {/* Header */}
-            <div className="p-6 border-b border-white/10 flex items-start gap-4">
-                <div className="w-12 h-12 bg-white rounded flex items-center justify-center flex-shrink-0">
-                    <img src="/assets/logo.png" alt="Paradex" className="w-8 h-8 object-contain invert" />
-                </div>
-                <div>
-                    <h3 className="text-xl md:text-2xl font-bold text-white leading-tight">
-                        Paradex FDV above ___ one day after launch?
-                    </h3>
-                    <div className="flex items-center gap-4 mt-2 text-gray-500 text-sm">
-                        <div className="flex items-center gap-1">
-                            <span>$73,281 Vol.</span>
-                        </div>
-                        <div className="flex items-center gap-1">
-                            <span>🕒 Jan 1, 2027</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <div className="w-full max-w-2xl mx-auto p-6 bg-white/5 border border-white/10 rounded-2xl backdrop-blur-md">
+            <h3 className="text-xl font-bold text-white mb-6 text-center">
+                What is your FDV prediction? 🗳️
+            </h3>
 
-            {/* Markets List */}
-            <div className="divide-y divide-white/5">
-                {/* Column Headers (Desktop) */}
-                <div className="hidden md:grid grid-cols-12 gap-4 px-6 py-3 text-xs font-bold text-gray-500 uppercase tracking-wider">
-                    <div className="col-span-4">Outcome</div>
-                    <div className="col-span-2 text-right">% Chance</div>
-                    <div className="col-span-6 text-center">Outcome Price</div>
-                </div>
+            <div className="space-y-4">
+                {OPTIONS.map((option) => (
+                    <button
+                        key={option.id}
+                        onClick={() => !hasVoted && handleVote(option.id)}
+                        disabled={hasVoted}
+                        className={`relative w-full p-4 rounded-xl border transition-all overflow-hidden group ${hasVoted
+                                ? 'border-transparent cursor-default'
+                                : 'border-white/10 hover:border-white/30 hover:bg-white/5'
+                            }`}
+                    >
+                        {/* Progress Bar Background (Only visible after vote) */}
+                        {hasVoted && (
+                            <motion.div
+                                initial={{ width: 0 }}
+                                animate={{ width: `${option.percentage}%` }}
+                                transition={{ duration: 1, ease: "easeOut" }}
+                                className="absolute inset-y-0 left-0 opacity-20"
+                                style={{ backgroundColor: option.color }}
+                            />
+                        )}
 
-                {MARKETS.map((market, index) => (
-                    <div key={index} className="group hover:bg-white/5 transition-colors">
-                        <div className="grid grid-cols-1 md:grid-cols-12 gap-4 px-6 py-4 items-center">
-                            {/* Outcome Label */}
-                            <div className="col-span-1 md:col-span-4 flex flex-col">
-                                <span className="text-white font-bold text-lg">{market.label}</span>
-                                <span className="text-gray-600 text-xs md:hidden">{market.vol} Vol.</span>
-                            </div>
-
-                            {/* Chance */}
-                            <div className="col-span-1 md:col-span-2 flex items-center justify-between md:justify-end gap-2">
-                                <span className="md:hidden text-gray-500 text-sm font-medium">Chance</span>
-                                <span className="text-white font-bold text-lg md:text-xl">{market.chance}%</span>
-                            </div>
-
-                            {/* Buttons */}
-                            <div className="col-span-1 md:col-span-6 flex gap-3">
-                                <button
-                                    onClick={() => handleVote(index, 'yes')}
-                                    className={`flex-1 flex flex-col items-center justify-center py-2 rounded-lg border transition-all ${selectedVote?.index === index && selectedVote?.type === 'yes'
-                                            ? 'bg-[#10b981] border-[#10b981] text-white shadow-[0_0_15px_rgba(16,185,129,0.4)]'
-                                            : 'bg-[#10b981]/10 border-[#10b981]/20 text-[#10b981] hover:bg-[#10b981]/20'
+                        <div className="relative flex items-center justify-between z-10">
+                            <div className="flex items-center gap-3">
+                                <div
+                                    className={`w-4 h-4 rounded-full border-2 flex items-center justify-center ${selectedOption === option.id
+                                            ? 'border-paradex-primary bg-paradex-primary'
+                                            : 'border-gray-500 group-hover:border-gray-300'
                                         }`}
                                 >
-                                    <span className="text-xs font-bold uppercase">Buy Yes</span>
-                                    <span className="text-sm font-bold">{market.yes}¢</span>
-                                </button>
-
-                                <button
-                                    onClick={() => handleVote(index, 'no')}
-                                    className={`flex-1 flex flex-col items-center justify-center py-2 rounded-lg border transition-all ${selectedVote?.index === index && selectedVote?.type === 'no'
-                                            ? 'bg-[#ef4444] border-[#ef4444] text-white shadow-[0_0_15px_rgba(239,68,68,0.4)]'
-                                            : 'bg-[#ef4444]/10 border-[#ef4444]/20 text-[#ef4444] hover:bg-[#ef4444]/20'
-                                        }`}
-                                >
-                                    <span className="text-xs font-bold uppercase">Buy No</span>
-                                    <span className="text-sm font-bold">{market.no}¢</span>
-                                </button>
+                                    {selectedOption === option.id && (
+                                        <div className="w-2 h-2 bg-black rounded-full" />
+                                    )}
+                                </div>
+                                <span className={`font-medium ${selectedOption === option.id ? 'text-white' : 'text-gray-300'}`}>
+                                    {option.label}
+                                </span>
                             </div>
+
+                            {hasVoted && (
+                                <motion.span
+                                    initial={{ opacity: 0, x: -10 }}
+                                    animate={{ opacity: 1, x: 0 }}
+                                    transition={{ delay: 0.5 }}
+                                    className="font-bold text-white"
+                                >
+                                    {option.percentage}% Chance
+                                </motion.span>
+                            )}
                         </div>
-                    </div>
+                    </button>
                 ))}
             </div>
+
+            {hasVoted && (
+                <p className="text-center text-gray-500 text-sm mt-6">
+                    Based on Polymarket odds 🔮
+                </p>
+            )}
         </div>
     );
 }
