@@ -13,7 +13,7 @@ export function SentimentPoll() {
     const [selectedOption, setSelectedOption] = useState(null);
 
     useEffect(() => {
-        const vote = localStorage.getItem('paradex_sentiment_vote');
+        const vote = localStorage.getItem('paradex_sentiment_vote_v2');
         if (vote) {
             setHasVoted(true);
             setSelectedOption(vote);
@@ -23,7 +23,7 @@ export function SentimentPoll() {
     const handleVote = (id) => {
         setHasVoted(true);
         setSelectedOption(id);
-        localStorage.setItem('paradex_sentiment_vote', id);
+        localStorage.setItem('paradex_sentiment_vote_v2', id);
     };
 
     return (
@@ -39,8 +39,8 @@ export function SentimentPoll() {
                         onClick={() => !hasVoted && handleVote(option.id)}
                         disabled={hasVoted}
                         className={`relative w-full p-4 rounded-xl border transition-all overflow-hidden group ${hasVoted
-                                ? 'border-transparent cursor-default'
-                                : 'border-white/10 hover:border-white/30 hover:bg-white/5'
+                            ? 'border-transparent cursor-default'
+                            : 'border-white/10 hover:border-white/30 hover:bg-white/5'
                             }`}
                     >
                         {/* Progress Bar Background (Only visible after vote) */}
@@ -58,8 +58,8 @@ export function SentimentPoll() {
                             <div className="flex items-center gap-3">
                                 <div
                                     className={`w-4 h-4 rounded-full border-2 flex items-center justify-center ${selectedOption === option.id
-                                            ? 'border-paradex-primary bg-paradex-primary'
-                                            : 'border-gray-500 group-hover:border-gray-300'
+                                        ? 'border-paradex-primary bg-paradex-primary'
+                                        : 'border-gray-500 group-hover:border-gray-300'
                                         }`}
                                 >
                                     {selectedOption === option.id && (
