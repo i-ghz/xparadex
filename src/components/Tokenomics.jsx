@@ -1,5 +1,6 @@
 import React from 'react';
 import { PieChart, Pie, Cell, ResponsiveContainer, Tooltip } from 'recharts';
+import { Handshake, Telescope, Building2, Fuel } from 'lucide-react';
 
 const DATA = [
     { name: 'Preseason & Season 1', value: 5, color: '#6366f1' }, // Indigo
@@ -19,7 +20,7 @@ export function Tokenomics() {
             {/* Background Gradient */}
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_rgba(34,211,238,0.1),_transparent_50%)] pointer-events-none" />
 
-            <div className="flex items-center gap-3 mb-12 relative z-10">
+            <div className="flex items-center gap-3 mb-8 relative z-10">
                 <div className="p-2 bg-paradex-primary/10 rounded-lg">
                     <svg className="w-6 h-6 text-paradex-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11 3.055A9.001 9.001 0 1020.945 13H11V3.055z" />
@@ -27,6 +28,49 @@ export function Tokenomics() {
                     </svg>
                 </div>
                 <h2 className="text-2xl md:text-3xl font-bold text-white">$DIME Tokenomics</h2>
+            </div>
+
+            {/* Key Innovations & Highlights */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-12 relative z-10">
+                <div className="bg-white/5 border border-white/10 rounded-2xl p-5 hover:bg-white/10 transition-colors group">
+                    <h3 className="text-[#22d3ee] font-bold text-base mb-2 flex items-center gap-2">
+                        <Handshake className="w-5 h-5" />
+                        Unprecedented Alignment
+                    </h3>
+                    <p className="text-gray-400 text-xs leading-relaxed">
+                        Paradex introduces a revolutionary <strong>Performance-Based Unlock</strong> mechanism. <span className="text-white font-bold">80% of Team tokens</span> are locked behind measurable milestones, ensuring 100% alignment with community success. No "rest and vest".
+                    </p>
+                </div>
+
+                <div className="bg-white/5 border border-white/10 rounded-2xl p-5 hover:bg-white/10 transition-colors group">
+                    <h3 className="text-[#22d3ee] font-bold text-base mb-2 flex items-center gap-2">
+                        <Telescope className="w-5 h-5" />
+                        The SuperDEX Vision
+                    </h3>
+                    <p className="text-gray-400 text-xs leading-relaxed">
+                        Bridging the gap between CeFi and DeFi. A unified platform offering Spot, Perps, and Options with cross-margin, all powered by the high-performance <strong>Paradex Chain</strong> (Layer 2).
+                    </p>
+                </div>
+
+                <div className="bg-white/5 border border-white/10 rounded-2xl p-5 hover:bg-white/10 transition-colors group">
+                    <h3 className="text-[#22d3ee] font-bold text-base mb-2 flex items-center gap-2">
+                        <Building2 className="w-5 h-5" />
+                        Incubated by Paradigm
+                    </h3>
+                    <p className="text-gray-400 text-xs leading-relaxed">
+                        Born from the largest institutional liquidity network (<strong>30% of global options market</strong>). This unique incubation provides deep liquidity and expertise without traditional VC constraints.
+                    </p>
+                </div>
+
+                <div className="bg-white/5 border border-white/10 rounded-2xl p-5 hover:bg-white/10 transition-colors group">
+                    <h3 className="text-[#22d3ee] font-bold text-base mb-2 flex items-center gap-2">
+                        <Fuel className="w-5 h-5" />
+                        $DIME Utility
+                    </h3>
+                    <p className="text-gray-400 text-xs leading-relaxed">
+                        $DIME is the native gas token of the Paradex Chain. It powers the ecosystem, from governance and staking to unlocking yield on the upcoming <strong>XUSD</strong> synthetic dollar.
+                    </p>
+                </div>
             </div>
 
             <div className="flex flex-col md:flex-row items-center gap-12 relative z-10">
