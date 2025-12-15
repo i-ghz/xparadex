@@ -3534,7 +3534,1023 @@ export const TRADE_HISTORY = [
         "price": "$0.18",
         "raw_price": 0.18,
         "raw_date": "10/12/25"
-    }
+    },
+{
+    "date": "10/12/25",
+    "points": "50,000",
+    "notional": "$10,500.00",
+    "price": "$0.21",
+    "raw_price": 0.21,
+    "raw_date": "10/12/25"
+},
+{
+    "date": "10/12/25",
+    "points": "23,100",
+    "notional": "$4,851.42",
+    "price": "$0.21",
+    "raw_price": 0.21,
+    "raw_date": "10/12/25"
+},
+{
+    "date": "10/12/25",
+    "points": "300,000",
+    "notional": "$63,000.00",
+    "price": "$0.21",
+    "raw_price": 0.21,
+    "raw_date": "10/12/25"
+},
+{
+    "date": "10/12/25",
+    "points": "23,600",
+    "notional": "$4,970.70",
+    "price": "$0.21",
+    "raw_price": 0.21,
+    "raw_date": "10/12/25"
+},
+{
+    "date": "10/12/25",
+    "points": "7,129",
+    "notional": "$1,354.51",
+    "price": "$0.19",
+    "raw_price": 0.19,
+    "raw_date": "10/12/25"
+},
+{
+    "date": "10/12/25",
+    "points": "11,500",
+    "notional": "$2,411.64",
+    "price": "$0.21",
+    "raw_price": 0.21,
+    "raw_date": "10/12/25"
+},
+{
+    "date": "10/12/25",
+    "points": "1,298",
+    "notional": "$233.64",
+    "price": "$0.18",
+    "raw_price": 0.18,
+    "raw_date": "10/12/25"
+},
+{
+    "date": "10/12/25",
+    "points": "2,935",
+    "notional": "$528.30",
+    "price": "$0.18",
+    "raw_price": 0.18,
+    "raw_date": "10/12/25"
+},
+{
+    "date": "10/12/25",
+    "points": "816",
+    "notional": "$146.88",
+    "price": "$0.18",
+    "raw_price": 0.18,
+    "raw_date": "10/12/25"
+},
+{
+    "date": "10/12/25",
+    "points": "5,735",
+    "notional": "$1,032.30",
+    "price": "$0.18",
+    "raw_price": 0.18,
+    "raw_date": "10/12/25"
+},
+{
+    "date": "10/12/25",
+    "points": "6,550",
+    "notional": "$1,211.75",
+    "price": "$0.185",
+    "raw_price": 0.185,
+    "raw_date": "10/12/25"
+},
+{
+    "date": "10/12/25",
+    "points": "200,000",
+    "notional": "$42,000.00",
+    "price": "$0.21",
+    "raw_price": 0.21,
+    "raw_date": "10/12/25"
+},
+{
+    "date": "10/12/25",
+    "points": "722",
+    "notional": "$129.96",
+    "price": "$0.18",
+    "raw_price": 0.18,
+    "raw_date": "10/12/25"
+},
+{
+    "date": "10/12/25",
+    "points": "100,000",
+    "notional": "$21,000.00",
+    "price": "$0.21",
+    "raw_price": 0.21,
+    "raw_date": "10/12/25"
+},
+{
+    "date": "10/12/25",
+    "points": "68,500",
+    "notional": "$14,391.00",
+    "price": "$0.21",
+    "raw_price": 0.21,
+    "raw_date": "10/12/25"
+},
+{
+    "date": "10/12/25",
+    "points": "33,500",
+    "notional": "$7,048.00",
+    "price": "$0.21",
+    "raw_price": 0.21,
+    "raw_date": "10/12/25"
+},
+{
+    "date": "10/12/25",
+    "points": "3,000",
+    "notional": "$570.00",
+    "price": "$0.19",
+    "raw_price": 0.19,
+    "raw_date": "10/12/25"
+},
+{
+    "date": "10/12/25",
+    "points": "297",
+    "notional": "$53.46",
+    "price": "$0.18",
+    "raw_price": 0.18,
+    "raw_date": "10/12/25"
+},
+{
+    "date": "10/12/25",
+    "points": "10,300",
+    "notional": "$2,178.84",
+    "price": "$0.21",
+    "raw_price": 0.21,
+    "raw_date": "10/12/25"
+},
+{
+    "date": "10/12/25",
+    "points": "14,000",
+    "notional": "$2,721.65",
+    "price": "$0.195",
+    "raw_price": 0.195,
+    "raw_date": "10/12/25"
+},
+{
+    "date": "10/12/25",
+    "points": "757",
+    "notional": "$136.26",
+    "price": "$0.18",
+    "raw_price": 0.18,
+    "raw_date": "10/12/25"
+},
+{
+    "date": "10/12/25",
+    "points": "7,321",
+    "notional": "$1,537.83",
+    "price": "$0.21",
+    "raw_price": 0.21,
+    "raw_date": "10/12/25"
+},
+{
+    "date": "10/12/25",
+    "points": "10,200",
+    "notional": "$2,043.80",
+    "price": "$0.2",
+    "raw_price": 0.2,
+    "raw_date": "10/12/25"
+},
+{
+    "date": "10/12/25",
+    "points": "332",
+    "notional": "$59.76",
+    "price": "$0.18",
+    "raw_price": 0.18,
+    "raw_date": "10/12/25"
+},
+{
+    "date": "11/12/25",
+    "points": "10,000",
+    "notional": "$1,900.00",
+    "price": "$0.19",
+    "raw_price": 0.19,
+    "raw_date": "11/12/25"
+},
+{
+    "date": "11/12/25",
+    "points": "2,777",
+    "notional": "$527.63",
+    "price": "$0.19",
+    "raw_price": 0.19,
+    "raw_date": "11/12/25"
+},
+{
+    "date": "11/12/25",
+    "points": "921",
+    "notional": "$165.78",
+    "price": "$0.18",
+    "raw_price": 0.18,
+    "raw_date": "11/12/25"
+},
+{
+    "date": "11/12/25",
+    "points": "8,238",
+    "notional": "$1,729.98",
+    "price": "$0.21",
+    "raw_price": 0.21,
+    "raw_date": "11/12/25"
+},
+{
+    "date": "11/12/25",
+    "points": "90,600",
+    "notional": "$19,029.00",
+    "price": "$0.21",
+    "raw_price": 0.21,
+    "raw_date": "11/12/25"
+},
+{
+    "date": "11/12/25",
+    "points": "96,800",
+    "notional": "$20,330.00",
+    "price": "$0.21",
+    "raw_price": 0.21,
+    "raw_date": "11/12/25"
+},
+{
+    "date": "11/12/25",
+    "points": "12,300",
+    "notional": "$2,337.00",
+    "price": "$0.19",
+    "raw_price": 0.19,
+    "raw_date": "11/12/25"
+},
+{
+    "date": "11/12/25",
+    "points": "4,110",
+    "notional": "$822.00",
+    "price": "$0.2",
+    "raw_price": 0.2,
+    "raw_date": "11/12/25"
+},
+{
+    "date": "11/12/25",
+    "points": "10,000",
+    "notional": "$2,100.00",
+    "price": "$0.21",
+    "raw_price": 0.21,
+    "raw_date": "11/12/25"
+},
+{
+    "date": "11/12/25",
+    "points": "6,470",
+    "notional": "$1,294.00",
+    "price": "$0.2",
+    "raw_price": 0.2,
+    "raw_date": "11/12/25"
+},
+{
+    "date": "11/12/25",
+    "points": "5,100",
+    "notional": "$1,020.00",
+    "price": "$0.2",
+    "raw_price": 0.2,
+    "raw_date": "11/12/25"
+},
+{
+    "date": "11/12/25",
+    "points": "20,700",
+    "notional": "$4,355.82",
+    "price": "$0.21",
+    "raw_price": 0.21,
+    "raw_date": "11/12/25"
+},
+{
+    "date": "11/12/25",
+    "points": "3,800",
+    "notional": "$760.00",
+    "price": "$0.2",
+    "raw_price": 0.2,
+    "raw_date": "11/12/25"
+},
+{
+    "date": "11/12/25",
+    "points": "4,471",
+    "notional": "$894.20",
+    "price": "$0.2",
+    "raw_price": 0.2,
+    "raw_date": "11/12/25"
+},
+{
+    "date": "11/12/25",
+    "points": "6,380",
+    "notional": "$1,308.10",
+    "price": "$0.205",
+    "raw_price": 0.205,
+    "raw_date": "11/12/25"
+},
+{
+    "date": "11/12/25",
+    "points": "12,800",
+    "notional": "$2,563.00",
+    "price": "$0.21",
+    "raw_price": 0.21,
+    "raw_date": "11/12/25"
+},
+{
+    "date": "11/12/25",
+    "points": "19,300",
+    "notional": "$4,058.25",
+    "price": "$0.21",
+    "raw_price": 0.21,
+    "raw_date": "11/12/25"
+},
+{
+    "date": "11/12/25",
+    "points": "4,555",
+    "notional": "$911.00",
+    "price": "$0.2",
+    "raw_price": 0.2,
+    "raw_date": "11/12/25"
+},
+{
+    "date": "11/12/25",
+    "points": "8,000",
+    "notional": "$1,680.00",
+    "price": "$0.21",
+    "raw_price": 0.21,
+    "raw_date": "11/12/25"
+},
+{
+    "date": "11/12/25",
+    "points": "14,700",
+    "notional": "$2,793.00",
+    "price": "$0.19",
+    "raw_price": 0.19,
+    "raw_date": "11/12/25"
+},
+{
+    "date": "11/12/25",
+    "points": "12,000",
+    "notional": "$2,532.39",
+    "price": "$0.21",
+    "raw_price": 0.21,
+    "raw_date": "11/12/25"
+},
+{
+    "date": "11/12/25",
+    "points": "25,000",
+    "notional": "$5,000.00",
+    "price": "$0.2",
+    "raw_price": 0.2,
+    "raw_date": "11/12/25"
+},
+{
+    "date": "11/12/25",
+    "points": "6,355",
+    "notional": "$1,271.00",
+    "price": "$0.2",
+    "raw_price": 0.2,
+    "raw_date": "11/12/25"
+},
+{
+    "date": "11/12/25",
+    "points": "7,500",
+    "notional": "$1,575.00",
+    "price": "$0.21",
+    "raw_price": 0.21,
+    "raw_date": "11/12/25"
+},
+{
+    "date": "11/12/25",
+    "points": "20,000",
+    "notional": "$4,200.00",
+    "price": "$0.21",
+    "raw_price": 0.21,
+    "raw_date": "11/12/25"
+},
+{
+    "date": "11/12/25",
+    "points": "19,900",
+    "notional": "$4,179.00",
+    "price": "$0.21",
+    "raw_price": 0.21,
+    "raw_date": "11/12/25"
+},
+{
+    "date": "11/12/25",
+    "points": "10,000",
+    "notional": "$2,100.00",
+    "price": "$0.21",
+    "raw_price": 0.21,
+    "raw_date": "11/12/25"
+},
+{
+    "date": "11/12/25",
+    "points": "10,000",
+    "notional": "$2,100.00",
+    "price": "$0.21",
+    "raw_price": 0.21,
+    "raw_date": "11/12/25"
+},
+{
+    "date": "11/12/25",
+    "points": "20,000",
+    "notional": "$4,200.00",
+    "price": "$0.21",
+    "raw_price": 0.21,
+    "raw_date": "11/12/25"
+},
+{
+    "date": "11/12/25",
+    "points": "50,000",
+    "notional": "$10,500.00",
+    "price": "$0.21",
+    "raw_price": 0.21,
+    "raw_date": "11/12/25"
+},
+{
+    "date": "11/12/25",
+    "points": "6,124",
+    "notional": "$1,224.80",
+    "price": "$0.2",
+    "raw_price": 0.2,
+    "raw_date": "11/12/25"
+},
+{
+    "date": "11/12/25",
+    "points": "956",
+    "notional": "$181.64",
+    "price": "$0.19",
+    "raw_price": 0.19,
+    "raw_date": "11/12/25"
+},
+{
+    "date": "11/12/25",
+    "points": "30,000",
+    "notional": "$6,300.00",
+    "price": "$0.21",
+    "raw_price": 0.21,
+    "raw_date": "11/12/25"
+},
+{
+    "date": "11/12/25",
+    "points": "55,800",
+    "notional": "$10,602.00",
+    "price": "$0.19",
+    "raw_price": 0.19,
+    "raw_date": "11/12/25"
+},
+{
+    "date": "11/12/25",
+    "points": "6,645",
+    "notional": "$1,262.55",
+    "price": "$0.19",
+    "raw_price": 0.19,
+    "raw_date": "11/12/25"
+},
+{
+    "date": "11/12/25",
+    "points": "28,500",
+    "notional": "$5,412.12",
+    "price": "$0.19",
+    "raw_price": 0.19,
+    "raw_date": "11/12/25"
+},
+{
+    "date": "11/12/25",
+    "points": "1,794",
+    "notional": "$340.86",
+    "price": "$0.19",
+    "raw_price": 0.19,
+    "raw_date": "11/12/25"
+},
+{
+    "date": "11/12/25",
+    "points": "2,400",
+    "notional": "$456.00",
+    "price": "$0.19",
+    "raw_price": 0.19,
+    "raw_date": "11/12/25"
+},
+{
+    "date": "11/12/25",
+    "points": "950",
+    "notional": "$180.50",
+    "price": "$0.19",
+    "raw_price": 0.19,
+    "raw_date": "11/12/25"
+},
+{
+    "date": "11/12/25",
+    "points": "1,688",
+    "notional": "$320.72",
+    "price": "$0.19",
+    "raw_price": 0.19,
+    "raw_date": "11/12/25"
+},
+{
+    "date": "11/12/25",
+    "points": "2,018",
+    "notional": "$382.42",
+    "price": "$0.19",
+    "raw_price": 0.19,
+    "raw_date": "11/12/25"
+},
+{
+    "date": "11/12/25",
+    "points": "3,000",
+    "notional": "$570.00",
+    "price": "$0.19",
+    "raw_price": 0.19,
+    "raw_date": "11/12/25"
+},
+{
+    "date": "11/12/25",
+    "points": "3,420",
+    "notional": "$684.00",
+    "price": "$0.2",
+    "raw_price": 0.2,
+    "raw_date": "11/12/25"
+},
+{
+    "date": "11/12/25",
+    "points": "7,000",
+    "notional": "$1,400.00",
+    "price": "$0.2",
+    "raw_price": 0.2,
+    "raw_date": "11/12/25"
+},
+{
+    "date": "11/12/25",
+    "points": "10,000",
+    "notional": "$2,000.00",
+    "price": "$0.2",
+    "raw_price": 0.2,
+    "raw_date": "11/12/25"
+},
+{
+    "date": "11/12/25",
+    "points": "4,350",
+    "notional": "$826.59",
+    "price": "$0.19",
+    "raw_price": 0.19,
+    "raw_date": "11/12/25"
+},
+{
+    "date": "11/12/25",
+    "points": "840",
+    "notional": "$151.20",
+    "price": "$0.18",
+    "raw_price": 0.18,
+    "raw_date": "11/12/25"
+},
+{
+    "date": "11/12/25",
+    "points": "6,500",
+    "notional": "$1,235.00",
+    "price": "$0.19",
+    "raw_price": 0.19,
+    "raw_date": "11/12/25"
+},
+{
+    "date": "11/12/25",
+    "points": "20,000",
+    "notional": "$4,000.00",
+    "price": "$0.2",
+    "raw_price": 0.2,
+    "raw_date": "11/12/25"
+},
+{
+    "date": "11/12/25",
+    "points": "5,000",
+    "notional": "$950.00",
+    "price": "$0.19",
+    "raw_price": 0.19,
+    "raw_date": "11/12/25"
+},
+{
+    "date": "11/12/25",
+    "points": "9,983",
+    "notional": "$1,896.77",
+    "price": "$0.19",
+    "raw_price": 0.19,
+    "raw_date": "11/12/25"
+},
+{
+    "date": "11/12/25",
+    "points": "10,100",
+    "notional": "$1,928.50",
+    "price": "$0.19",
+    "raw_price": 0.19,
+    "raw_date": "11/12/25"
+},
+{
+    "date": "11/12/25",
+    "points": "762",
+    "notional": "$137.16",
+    "price": "$0.18",
+    "raw_price": 0.18,
+    "raw_date": "11/12/25"
+},
+{
+    "date": "12/12/25",
+    "points": "1,097",
+    "notional": "$197.46",
+    "price": "$0.18",
+    "raw_price": 0.18,
+    "raw_date": "12/12/25"
+},
+{
+    "date": "12/12/25",
+    "points": "1,850",
+    "notional": "$333.00",
+    "price": "$0.18",
+    "raw_price": 0.18,
+    "raw_date": "12/12/25"
+},
+{
+    "date": "12/12/25",
+    "points": "200,000",
+    "notional": "$42,000.00",
+    "price": "$0.21",
+    "raw_price": 0.21,
+    "raw_date": "12/12/25"
+},
+{
+    "date": "12/12/25",
+    "points": "224,660",
+    "notional": "$47,178.60",
+    "price": "$0.21",
+    "raw_price": 0.21,
+    "raw_date": "12/12/25"
+},
+{
+    "date": "12/12/25",
+    "points": "1,296",
+    "notional": "$233.28",
+    "price": "$0.18",
+    "raw_price": 0.18,
+    "raw_date": "12/12/25"
+},
+{
+    "date": "12/12/25",
+    "points": "2,000",
+    "notional": "$380.00",
+    "price": "$0.19",
+    "raw_price": 0.19,
+    "raw_date": "12/12/25"
+},
+{
+    "date": "12/12/25",
+    "points": "2,000",
+    "notional": "$370.00",
+    "price": "$0.185",
+    "raw_price": 0.185,
+    "raw_date": "12/12/25"
+},
+{
+    "date": "12/12/25",
+    "points": "10,000",
+    "notional": "$1,850.00",
+    "price": "$0.185",
+    "raw_price": 0.185,
+    "raw_date": "12/12/25"
+},
+{
+    "date": "12/12/25",
+    "points": "1,593",
+    "notional": "$302.67",
+    "price": "$0.19",
+    "raw_price": 0.19,
+    "raw_date": "12/12/25"
+},
+{
+    "date": "12/12/25",
+    "points": "1,828",
+    "notional": "$347.32",
+    "price": "$0.19",
+    "raw_price": 0.19,
+    "raw_date": "12/12/25"
+},
+{
+    "date": "12/12/25",
+    "points": "4,590",
+    "notional": "$872.10",
+    "price": "$0.19",
+    "raw_price": 0.19,
+    "raw_date": "12/12/25"
+},
+{
+    "date": "12/12/25",
+    "points": "17,000",
+    "notional": "$3,230.00",
+    "price": "$0.19",
+    "raw_price": 0.19,
+    "raw_date": "12/12/25"
+},
+{
+    "date": "12/12/25",
+    "points": "11,000",
+    "notional": "$2,090.00",
+    "price": "$0.19",
+    "raw_price": 0.19,
+    "raw_date": "12/12/25"
+},
+{
+    "date": "12/12/25",
+    "points": "20,000",
+    "notional": "$3,800.00",
+    "price": "$0.19",
+    "raw_price": 0.19,
+    "raw_date": "12/12/25"
+},
+{
+    "date": "12/12/25",
+    "points": "2,661",
+    "notional": "$505.59",
+    "price": "$0.19",
+    "raw_price": 0.19,
+    "raw_date": "12/12/25"
+},
+{
+    "date": "12/12/25",
+    "points": "1,400",
+    "notional": "$266.00",
+    "price": "$0.19",
+    "raw_price": 0.19,
+    "raw_date": "12/12/25"
+},
+{
+    "date": "12/12/25",
+    "points": "2,772",
+    "notional": "$526.68",
+    "price": "$0.19",
+    "raw_price": 0.19,
+    "raw_date": "12/12/25"
+},
+{
+    "date": "13/12/25",
+    "points": "4,000",
+    "notional": "$720.00",
+    "price": "$0.185",
+    "raw_price": 0.185,
+    "raw_date": "13/12/25"
+},
+{
+    "date": "13/12/25",
+    "points": "4,434",
+    "notional": "$798.12",
+    "price": "$0.18",
+    "raw_price": 0.18,
+    "raw_date": "13/12/25"
+},
+{
+    "date": "13/12/25",
+    "points": "7,000",
+    "notional": "$1,260.00",
+    "price": "$0.18",
+    "raw_price": 0.18,
+    "raw_date": "13/12/25"
+},
+{
+    "date": "13/12/25",
+    "points": "2,482",
+    "notional": "$421.94",
+    "price": "$0.17",
+    "raw_price": 0.17,
+    "raw_date": "13/12/25"
+},
+{
+    "date": "13/12/25",
+    "points": "2,100",
+    "notional": "$336.00",
+    "price": "$0.16",
+    "raw_price": 0.16,
+    "raw_date": "13/12/25"
+},
+{
+    "date": "13/12/25",
+    "points": "2,500",
+    "notional": "$425.00",
+    "price": "$0.17",
+    "raw_price": 0.17,
+    "raw_date": "13/12/25"
+},
+{
+    "date": "13/12/25",
+    "points": "6,200",
+    "notional": "$1,147.00",
+    "price": "$0.185",
+    "raw_price": 0.185,
+    "raw_date": "13/12/25"
+},
+{
+    "date": "14/12/25",
+    "points": "2,476",
+    "notional": "$445.73",
+    "price": "$0.18",
+    "raw_price": 0.18,
+    "raw_date": "14/12/25"
+},
+{
+    "date": "14/12/25",
+    "points": "1,625",
+    "notional": "$292.50",
+    "price": "$0.18",
+    "raw_price": 0.18,
+    "raw_date": "14/12/25"
+},
+{
+    "date": "14/12/25",
+    "points": "1,000",
+    "notional": "$180.00",
+    "price": "$0.18",
+    "raw_price": 0.18,
+    "raw_date": "14/12/25"
+},
+{
+    "date": "14/12/25",
+    "points": "2,823",
+    "notional": "$508.14",
+    "price": "$0.18",
+    "raw_price": 0.18,
+    "raw_date": "14/12/25"
+},
+{
+    "date": "14/12/25",
+    "points": "1,031",
+    "notional": "$185.58",
+    "price": "$0.18",
+    "raw_price": 0.18,
+    "raw_date": "14/12/25"
+},
+{
+    "date": "14/12/25",
+    "points": "769",
+    "notional": "$138.42",
+    "price": "$0.18",
+    "raw_price": 0.18,
+    "raw_date": "14/12/25"
+},
+{
+    "date": "14/12/25",
+    "points": "1,612",
+    "notional": "$290.16",
+    "price": "$0.18",
+    "raw_price": 0.18,
+    "raw_date": "14/12/25"
+},
+{
+    "date": "14/12/25",
+    "points": "1,017",
+    "notional": "$183.06",
+    "price": "$0.18",
+    "raw_price": 0.18,
+    "raw_date": "14/12/25"
+},
+{
+    "date": "14/12/25",
+    "points": "1,670",
+    "notional": "$300.60",
+    "price": "$0.18",
+    "raw_price": 0.18,
+    "raw_date": "14/12/25"
+},
+{
+    "date": "14/12/25",
+    "points": "1,000",
+    "notional": "$180.00",
+    "price": "$0.18",
+    "raw_price": 0.18,
+    "raw_date": "14/12/25"
+},
+{
+    "date": "14/12/25",
+    "points": "1,215",
+    "notional": "$218.70",
+    "price": "$0.18",
+    "raw_price": 0.18,
+    "raw_date": "14/12/25"
+},
+{
+    "date": "15/12/25",
+    "points": "15,000",
+    "notional": "$2,550.00",
+    "price": "$0.17",
+    "raw_price": 0.17,
+    "raw_date": "15/12/25"
+},
+{
+    "date": "15/12/25",
+    "points": "5,777",
+    "notional": "$1,039.96",
+    "price": "$0.18",
+    "raw_price": 0.18,
+    "raw_date": "15/12/25"
+},
+{
+    "date": "15/12/25",
+    "points": "2,087",
+    "notional": "$375.66",
+    "price": "$0.18",
+    "raw_price": 0.18,
+    "raw_date": "15/12/25"
+},
+{
+    "date": "15/12/25",
+    "points": "1,500",
+    "notional": "$270.00",
+    "price": "$0.18",
+    "raw_price": 0.18,
+    "raw_date": "15/12/25"
+},
+{
+    "date": "15/12/25",
+    "points": "250,000",
+    "notional": "$50,000.00",
+    "price": "$0.2",
+    "raw_price": 0.2,
+    "raw_date": "15/12/25"
+},
+{
+    "date": "15/12/25",
+    "points": "100,000",
+    "notional": "$19,000.00",
+    "price": "$0.19",
+    "raw_price": 0.19,
+    "raw_date": "15/12/25"
+},
+{
+    "date": "15/12/25",
+    "points": "205,000",
+    "notional": "$43,050.00",
+    "price": "$0.21",
+    "raw_price": 0.21,
+    "raw_date": "15/12/25"
+},
+{
+    "date": "15/12/25",
+    "points": "250,000",
+    "notional": "$50,000.00",
+    "price": "$0.2",
+    "raw_price": 0.2,
+    "raw_date": "15/12/25"
+},
+{
+    "date": "15/12/25",
+    "points": "7,000",
+    "notional": "$1,260.00",
+    "price": "$0.18",
+    "raw_price": 0.18,
+    "raw_date": "15/12/25"
+},
+{
+    "date": "15/12/25",
+    "points": "1,200",
+    "notional": "$216.00",
+    "price": "$0.18",
+    "raw_price": 0.18,
+    "raw_date": "15/12/25"
+},
+{
+    "date": "15/12/25",
+    "points": "1,603",
+    "notional": "$288.50",
+    "price": "$0.18",
+    "raw_price": 0.18,
+    "raw_date": "15/12/25"
+},
+{
+    "date": "15/12/25",
+    "points": "14,000",
+    "notional": "$2,380.00",
+    "price": "$0.17",
+    "raw_price": 0.17,
+    "raw_date": "15/12/25"
+},
+{
+    "date": "15/12/25",
+    "points": "5,820",
+    "notional": "$989.40",
+    "price": "$0.17",
+    "raw_price": 0.17,
+    "raw_date": "15/12/25"
+},
+{
+    "date": "15/12/25",
+    "points": "1,612",
+    "notional": "$290.16",
+    "price": "$0.18",
+    "raw_price": 0.18,
+    "raw_date": "15/12/25"
+},
+{
+    "date": "15/12/25",
+    "points": "5,200",
+    "notional": "$884.00",
+    "price": "$0.17",
+    "raw_price": 0.17,
+    "raw_date": "15/12/25"
+}
 ];
 
 export const CHART_DATA = [
@@ -5742,5 +6758,640 @@ export const CHART_DATA = [
         "date": "10/12/25",
         "price": 0.18,
         "index": 440
-    }
+    },
+{
+    "date": "10/12/25",
+    "price": 0.21,
+    "index": 441
+},
+{
+    "date": "10/12/25",
+    "price": 0.21,
+    "index": 442
+},
+{
+    "date": "10/12/25",
+    "price": 0.21,
+    "index": 443
+},
+{
+    "date": "10/12/25",
+    "price": 0.21,
+    "index": 444
+},
+{
+    "date": "10/12/25",
+    "price": 0.19,
+    "index": 445
+},
+{
+    "date": "10/12/25",
+    "price": 0.21,
+    "index": 446
+},
+{
+    "date": "10/12/25",
+    "price": 0.18,
+    "index": 447
+},
+{
+    "date": "10/12/25",
+    "price": 0.18,
+    "index": 448
+},
+{
+    "date": "10/12/25",
+    "price": 0.18,
+    "index": 449
+},
+{
+    "date": "10/12/25",
+    "price": 0.18,
+    "index": 450
+},
+{
+    "date": "10/12/25",
+    "price": 0.185,
+    "index": 451
+},
+{
+    "date": "10/12/25",
+    "price": 0.21,
+    "index": 452
+},
+{
+    "date": "10/12/25",
+    "price": 0.18,
+    "index": 453
+},
+{
+    "date": "10/12/25",
+    "price": 0.21,
+    "index": 454
+},
+{
+    "date": "10/12/25",
+    "price": 0.21,
+    "index": 455
+},
+{
+    "date": "10/12/25",
+    "price": 0.21,
+    "index": 456
+},
+{
+    "date": "10/12/25",
+    "price": 0.19,
+    "index": 457
+},
+{
+    "date": "10/12/25",
+    "price": 0.18,
+    "index": 458
+},
+{
+    "date": "10/12/25",
+    "price": 0.21,
+    "index": 459
+},
+{
+    "date": "10/12/25",
+    "price": 0.195,
+    "index": 460
+},
+{
+    "date": "10/12/25",
+    "price": 0.18,
+    "index": 461
+},
+{
+    "date": "10/12/25",
+    "price": 0.21,
+    "index": 462
+},
+{
+    "date": "10/12/25",
+    "price": 0.2,
+    "index": 463
+},
+{
+    "date": "10/12/25",
+    "price": 0.18,
+    "index": 464
+},
+{
+    "date": "11/12/25",
+    "price": 0.19,
+    "index": 465
+},
+{
+    "date": "11/12/25",
+    "price": 0.19,
+    "index": 466
+},
+{
+    "date": "11/12/25",
+    "price": 0.18,
+    "index": 467
+},
+{
+    "date": "11/12/25",
+    "price": 0.21,
+    "index": 468
+},
+{
+    "date": "11/12/25",
+    "price": 0.21,
+    "index": 469
+},
+{
+    "date": "11/12/25",
+    "price": 0.21,
+    "index": 470
+},
+{
+    "date": "11/12/25",
+    "price": 0.19,
+    "index": 471
+},
+{
+    "date": "11/12/25",
+    "price": 0.2,
+    "index": 472
+},
+{
+    "date": "11/12/25",
+    "price": 0.21,
+    "index": 473
+},
+{
+    "date": "11/12/25",
+    "price": 0.2,
+    "index": 474
+},
+{
+    "date": "11/12/25",
+    "price": 0.2,
+    "index": 475
+},
+{
+    "date": "11/12/25",
+    "price": 0.21,
+    "index": 476
+},
+{
+    "date": "11/12/25",
+    "price": 0.2,
+    "index": 477
+},
+{
+    "date": "11/12/25",
+    "price": 0.2,
+    "index": 478
+},
+{
+    "date": "11/12/25",
+    "price": 0.205,
+    "index": 479
+},
+{
+    "date": "11/12/25",
+    "price": 0.21,
+    "index": 480
+},
+{
+    "date": "11/12/25",
+    "price": 0.21,
+    "index": 481
+},
+{
+    "date": "11/12/25",
+    "price": 0.2,
+    "index": 482
+},
+{
+    "date": "11/12/25",
+    "price": 0.21,
+    "index": 483
+},
+{
+    "date": "11/12/25",
+    "price": 0.19,
+    "index": 484
+},
+{
+    "date": "11/12/25",
+    "price": 0.21,
+    "index": 485
+},
+{
+    "date": "11/12/25",
+    "price": 0.2,
+    "index": 486
+},
+{
+    "date": "11/12/25",
+    "price": 0.2,
+    "index": 487
+},
+{
+    "date": "11/12/25",
+    "price": 0.21,
+    "index": 488
+},
+{
+    "date": "11/12/25",
+    "price": 0.21,
+    "index": 489
+},
+{
+    "date": "11/12/25",
+    "price": 0.21,
+    "index": 490
+},
+{
+    "date": "11/12/25",
+    "price": 0.21,
+    "index": 491
+},
+{
+    "date": "11/12/25",
+    "price": 0.21,
+    "index": 492
+},
+{
+    "date": "11/12/25",
+    "price": 0.21,
+    "index": 493
+},
+{
+    "date": "11/12/25",
+    "price": 0.21,
+    "index": 494
+},
+{
+    "date": "11/12/25",
+    "price": 0.2,
+    "index": 495
+},
+{
+    "date": "11/12/25",
+    "price": 0.19,
+    "index": 496
+},
+{
+    "date": "11/12/25",
+    "price": 0.21,
+    "index": 497
+},
+{
+    "date": "11/12/25",
+    "price": 0.19,
+    "index": 498
+},
+{
+    "date": "11/12/25",
+    "price": 0.19,
+    "index": 499
+},
+{
+    "date": "11/12/25",
+    "price": 0.19,
+    "index": 500
+},
+{
+    "date": "11/12/25",
+    "price": 0.19,
+    "index": 501
+},
+{
+    "date": "11/12/25",
+    "price": 0.19,
+    "index": 502
+},
+{
+    "date": "11/12/25",
+    "price": 0.19,
+    "index": 503
+},
+{
+    "date": "11/12/25",
+    "price": 0.19,
+    "index": 504
+},
+{
+    "date": "11/12/25",
+    "price": 0.19,
+    "index": 505
+},
+{
+    "date": "11/12/25",
+    "price": 0.19,
+    "index": 506
+},
+{
+    "date": "11/12/25",
+    "price": 0.2,
+    "index": 507
+},
+{
+    "date": "11/12/25",
+    "price": 0.2,
+    "index": 508
+},
+{
+    "date": "11/12/25",
+    "price": 0.2,
+    "index": 509
+},
+{
+    "date": "11/12/25",
+    "price": 0.19,
+    "index": 510
+},
+{
+    "date": "11/12/25",
+    "price": 0.18,
+    "index": 511
+},
+{
+    "date": "11/12/25",
+    "price": 0.19,
+    "index": 512
+},
+{
+    "date": "11/12/25",
+    "price": 0.2,
+    "index": 513
+},
+{
+    "date": "11/12/25",
+    "price": 0.19,
+    "index": 514
+},
+{
+    "date": "11/12/25",
+    "price": 0.19,
+    "index": 515
+},
+{
+    "date": "11/12/25",
+    "price": 0.19,
+    "index": 516
+},
+{
+    "date": "11/12/25",
+    "price": 0.18,
+    "index": 517
+},
+{
+    "date": "12/12/25",
+    "price": 0.18,
+    "index": 518
+},
+{
+    "date": "12/12/25",
+    "price": 0.18,
+    "index": 519
+},
+{
+    "date": "12/12/25",
+    "price": 0.21,
+    "index": 520
+},
+{
+    "date": "12/12/25",
+    "price": 0.21,
+    "index": 521
+},
+{
+    "date": "12/12/25",
+    "price": 0.18,
+    "index": 522
+},
+{
+    "date": "12/12/25",
+    "price": 0.19,
+    "index": 523
+},
+{
+    "date": "12/12/25",
+    "price": 0.185,
+    "index": 524
+},
+{
+    "date": "12/12/25",
+    "price": 0.185,
+    "index": 525
+},
+{
+    "date": "12/12/25",
+    "price": 0.19,
+    "index": 526
+},
+{
+    "date": "12/12/25",
+    "price": 0.19,
+    "index": 527
+},
+{
+    "date": "12/12/25",
+    "price": 0.19,
+    "index": 528
+},
+{
+    "date": "12/12/25",
+    "price": 0.19,
+    "index": 529
+},
+{
+    "date": "12/12/25",
+    "price": 0.19,
+    "index": 530
+},
+{
+    "date": "12/12/25",
+    "price": 0.19,
+    "index": 531
+},
+{
+    "date": "12/12/25",
+    "price": 0.19,
+    "index": 532
+},
+{
+    "date": "12/12/25",
+    "price": 0.19,
+    "index": 533
+},
+{
+    "date": "12/12/25",
+    "price": 0.19,
+    "index": 534
+},
+{
+    "date": "13/12/25",
+    "price": 0.185,
+    "index": 535
+},
+{
+    "date": "13/12/25",
+    "price": 0.18,
+    "index": 536
+},
+{
+    "date": "13/12/25",
+    "price": 0.18,
+    "index": 537
+},
+{
+    "date": "13/12/25",
+    "price": 0.17,
+    "index": 538
+},
+{
+    "date": "13/12/25",
+    "price": 0.16,
+    "index": 539
+},
+{
+    "date": "13/12/25",
+    "price": 0.17,
+    "index": 540
+},
+{
+    "date": "13/12/25",
+    "price": 0.185,
+    "index": 541
+},
+{
+    "date": "14/12/25",
+    "price": 0.18,
+    "index": 542
+},
+{
+    "date": "14/12/25",
+    "price": 0.18,
+    "index": 543
+},
+{
+    "date": "14/12/25",
+    "price": 0.18,
+    "index": 544
+},
+{
+    "date": "14/12/25",
+    "price": 0.18,
+    "index": 545
+},
+{
+    "date": "14/12/25",
+    "price": 0.18,
+    "index": 546
+},
+{
+    "date": "14/12/25",
+    "price": 0.18,
+    "index": 547
+},
+{
+    "date": "14/12/25",
+    "price": 0.18,
+    "index": 548
+},
+{
+    "date": "14/12/25",
+    "price": 0.18,
+    "index": 549
+},
+{
+    "date": "14/12/25",
+    "price": 0.18,
+    "index": 550
+},
+{
+    "date": "14/12/25",
+    "price": 0.18,
+    "index": 551
+},
+{
+    "date": "14/12/25",
+    "price": 0.18,
+    "index": 552
+},
+{
+    "date": "15/12/25",
+    "price": 0.17,
+    "index": 553
+},
+{
+    "date": "15/12/25",
+    "price": 0.18,
+    "index": 554
+},
+{
+    "date": "15/12/25",
+    "price": 0.18,
+    "index": 555
+},
+{
+    "date": "15/12/25",
+    "price": 0.18,
+    "index": 556
+},
+{
+    "date": "15/12/25",
+    "price": 0.2,
+    "index": 557
+},
+{
+    "date": "15/12/25",
+    "price": 0.19,
+    "index": 558
+},
+{
+    "date": "15/12/25",
+    "price": 0.21,
+    "index": 559
+},
+{
+    "date": "15/12/25",
+    "price": 0.2,
+    "index": 560
+},
+{
+    "date": "15/12/25",
+    "price": 0.18,
+    "index": 561
+},
+{
+    "date": "15/12/25",
+    "price": 0.18,
+    "index": 562
+},
+{
+    "date": "15/12/25",
+    "price": 0.18,
+    "index": 563
+},
+{
+    "date": "15/12/25",
+    "price": 0.17,
+    "index": 564
+},
+{
+    "date": "15/12/25",
+    "price": 0.17,
+    "index": 565
+},
+{
+    "date": "15/12/25",
+    "price": 0.18,
+    "index": 566
+},
+{
+    "date": "15/12/25",
+    "price": 0.17,
+    "index": 567
+}
 ];

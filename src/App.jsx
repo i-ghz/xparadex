@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { Analytics } from "@vercel/analytics/react";
 import { FundingViewAd } from './components/FundingViewAd';
 import { ParadexStats } from './components/ParadexStats';
@@ -9,8 +10,9 @@ import { OTC } from './components/OTC';
 import { Navbar } from './components/Navbar';
 import { Dashboard } from './components/Dashboard';
 import { Tokenomics } from './components/Tokenomics';
+import { ExecutionCostWidget } from './components/ExecutionCostWidget';
 
-function App() {
+function MainApp() {
   const [activeTab, setActiveTab] = useState('dashboard');
 
   return (
@@ -29,8 +31,6 @@ function App() {
             <AirdropEstimator />
           </div>
         )}
-
-
 
         {activeTab === 'analytics' && (
           <div className="w-full flex flex-col items-center animate-in fade-in slide-in-from-bottom-4 duration-500">
@@ -66,6 +66,17 @@ function App() {
       <FundingViewAd />
       <Analytics />
     </div>
+  );
+}
+
+function App() {
+  return (
+    <Router>
+      <Routes>
+        <Route path="/widget/execution-cost" element={<ExecutionCostWidget />} />
+        <Route path="*" element={<MainApp />} />
+      </Routes>
+    </Router>
   );
 }
 
