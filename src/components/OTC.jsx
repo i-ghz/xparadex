@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
 import { TrendingUp, TrendingDown, DollarSign, Activity, BookOpen, History, ShieldCheck, Send, Info } from 'lucide-react';
-import { OTC_STATS, TRADE_HISTORY, CHART_DATA } from '../data/otcData';
+import { TRADE_HISTORY, CHART_DATA } from '../data/otcData';
 
 const REVIEWS_DATA = [
     { user: 'ghz', date: '9 Dec 2025', text: 'I used Paradex OTC for the 3rd time today... The experience is amazing... Everything is transparent, the guys are super super reactive... They don\'t manipulate the spread... Big love to Paradex OTC team 🫡' },
@@ -57,6 +57,8 @@ export function OTC() {
     const reviewsPerPage = 3;
     const tradesPerPage = 10;
 
+    const [timeRange, setTimeRange] = useState('all');
+
     const handleSellClick = () => {
         if (!sellAmount || !sellPrice) return;
 
@@ -71,38 +73,33 @@ export function OTC() {
     const currentReviews = REVIEWS_DATA.slice(indexOfFirstReview, indexOfLastReview);
     const totalPages = Math.ceil(REVIEWS_DATA.length / reviewsPerPage);
 
-    // Pagination Logic for Trade History
-    // Sort history by date descending (newest first)
-    const sortedHistory = [...TRADE_HISTORY].sort((a, b) => {
-        const parseDate = (dateStr) => {
-            const [day, month, year] = dateStr.split('/').map(Number);
-            return new Date(2000 + year, month - 1, day);
-        };
-        return parseDate(b.raw_date) - parseDate(a.raw_date);
-    });
+    // Helpers for Date Parsing and Filtering
+    const parseDate = (dateStr) => {
+        const [day, month, year] = dateStr.split('/').map(Number);
+        return new Date(2000 + year, month - 1, day);
+    };
 
-    const indexOfLastTrade = tradeHistoryPage * tradesPerPage;
-    const indexOfFirstTrade = indexOfLastTrade - tradesPerPage;
-    const currentTrades = sortedHistory.slice(indexOfFirstTrade, indexOfLastTrade);
-    const totalTradePages = Math.ceil(sortedHistory.length / tradesPerPage);
+    const isWithinRange = (dateStr, range) => {
+        if (range === 'all') return true;
+        const date = parseDate(dateStr);
+        const now = new Date();
+        const diffTime = Math.abs(now - date);
+        const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
 
-    // Calculate Volumes
-    const parseCurrency = (str) => Number(str.replace(/[^0-9.-]+/g, ""));
-
-    const totalVolume = TRADE_HISTORY.reduce((acc, trade) => acc + parseCurrency(trade.notional), 0);
-
-    const sevenDayVolume = TRADE_HISTORY.reduce((acc, trade) => {
-        const [day, month, year] = trade.raw_date.split('/').map(Number);
-        const tradeDate = new Date(2000 + year, month - 1, day);
-        const sevenDaysAgo = new Date();
-        sevenDaysAgo.setDate(sevenDaysAgo.getDate() - 7);
-
-        if (tradeDate >= sevenDaysAgo) {
-            return acc + parseCurrency(trade.notional);
+        switch (range) {
+            case '7d': return diffDays <= 7;
+            case '14d': return diffDays <= 14;
+            case '30d': return diffDays <= 30;
+            default: return true;
         }
-        return acc;
-    }, 0);
+    };
 
+    // Filtered Data
+    const filteredTrades = TRADE_HISTORY.filter(trade => isWithinRange(trade.raw_date, timeRange));
+    const filteredChartData = CHART_DATA.filter(point => isWithinRange(point.date, timeRange));
+
+    // Calculate Dynamic Stats
+    const parseCurrency = (str) => Number(str.replace(/[^0-9.-]+/g, ""));
     const formatCurrency = (num) => {
         return new Intl.NumberFormat('en-US', {
             style: 'currency',
@@ -111,6 +108,32 @@ export function OTC() {
             maximumFractionDigits: 0,
         }).format(num);
     };
+
+    const stats = React.useMemo(() => {
+        if (filteredTrades.length === 0) return { avg: 0, min: 0, max: 0, vol: 0 };
+
+        const prices = filteredTrades.map(t => t.raw_price);
+        const volume = filteredTrades.reduce((acc, t) => acc + parseCurrency(t.notional), 0);
+        const avg = prices.reduce((a, b) => a + b, 0) / prices.length;
+
+        return {
+            avg: avg.toFixed(3),
+            min: Math.min(...prices).toFixed(2),
+            max: Math.max(...prices).toFixed(2),
+            vol: volume
+        };
+    }, [filteredTrades]);
+
+    // Pagination Logic for Trade History (using filtered trades)
+    // Sort history by date descending (newest first)
+    const sortedHistory = [...filteredTrades].sort((a, b) => {
+        return parseDate(b.raw_date) - parseDate(a.raw_date);
+    });
+
+    const indexOfLastTrade = tradeHistoryPage * tradesPerPage;
+    const indexOfFirstTrade = indexOfLastTrade - tradesPerPage;
+    const currentTrades = sortedHistory.slice(indexOfFirstTrade, indexOfLastTrade);
+    const totalTradePages = Math.ceil(sortedHistory.length / tradesPerPage);
 
     // Smooth Chart Data (Moving Average)
     const smoothData = (data, windowSize = 5) => {
@@ -123,7 +146,19 @@ export function OTC() {
         });
     };
 
-    const SMOOTHED_CHART_DATA = smoothData(CHART_DATA, 4); // Window size of 4 for smoothing
+    const SMOOTHED_CHART_DATA = smoothData(filteredChartData, 4);
+
+    const FilterButton = ({ label, value }) => (
+        <button
+            onClick={() => setTimeRange(value)}
+            className={`px-4 py-2 rounded-lg text-sm font-bold transition-all ${timeRange === value
+                ? 'bg-[#22d3ee] text-black shadow-[0_0_15px_rgba(34,211,238,0.3)]'
+                : 'bg-white/5 text-gray-400 hover:bg-white/10 hover:text-white'
+                }`}
+        >
+            {label}
+        </button>
+    );
 
     return (
         <div className="w-full max-w-7xl mx-auto flex flex-col gap-8 animate-in fade-in slide-in-from-bottom-4 duration-500">
@@ -136,15 +171,22 @@ export function OTC() {
                 <p className="text-gray-400 text-lg max-w-2xl mx-auto">
                     The most liquid and secure marketplace for Paradex XP.
                 </p>
+
+                {/* Time Filters */}
+                <div className="flex items-center justify-center gap-2 mt-6">
+                    <FilterButton label="7D" value="7d" />
+                    <FilterButton label="14D" value="14d" />
+                    <FilterButton label="30D" value="30d" />
+                    <FilterButton label="ALL" value="all" />
+                </div>
             </div>
 
             {/* Stats Grid */}
-            <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
-                <StatBox label="Average Price" value={`$${OTC_STATS.avgPrice}`} highlight={true} />
-                <StatBox label="Min Price" value={`$${OTC_STATS.minPrice}`} />
-                <StatBox label="Max Price" value={`$${OTC_STATS.maxPrice}`} />
-                <StatBox label="Total Volume" value={formatCurrency(totalVolume)} />
-                <StatBox label="7-Day Volume" value={formatCurrency(sevenDayVolume)} />
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <StatBox label="Average Price" value={`$${stats.avg}`} highlight={true} />
+                <StatBox label="Min Price" value={`$${stats.min}`} />
+                <StatBox label="Max Price" value={`$${stats.max}`} />
+                <StatBox label="Volume" value={formatCurrency(stats.vol)} />
             </div>
 
             {/* Chart & Sell Form Section */}
