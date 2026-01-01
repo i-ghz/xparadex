@@ -2,7 +2,7 @@ import React, { useState, useEffect, useCallback, useRef, useMemo } from 'react'
 import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronLeft, ChevronRight, Sparkles, TrendingUp, Users, Activity, Zap, DollarSign, Heart, Shield, Rocket, ArrowRight, User, Globe, Key, Eye, EyeOff, Lock, ExternalLink, AlertCircle, Loader2, Trophy, Clock, BarChart2, Star, Coins, Copy, Check, ArrowUp, ArrowDown, Download } from 'lucide-react';
 import { useParadexAccount } from '../hooks/useParadexAccount';
-import html2canvas from 'html2canvas';
+import { toPng, toBlob } from 'html-to-image';
 
 // Format large numbers
 function formatNumber(num, decimals = 0) {
@@ -1374,33 +1374,29 @@ function PersonalFinaleSlide({ data }) {
   const [isGenerating, setIsGenerating] = useState(false);
   const [downloaded, setDownloaded] = useState(false);
 
-  const generateCanvas = async () => {
-    if (!cardRef.current) return null;
-    return await html2canvas(cardRef.current, {
-      backgroundColor: '#0a0a0a',
-      scale: 2,
-      logging: false,
-      useCORS: true,
-      allowTaint: true,
-    });
-  };
-
   const downloadImage = async () => {
     if (!cardRef.current || isGenerating) return;
     setIsGenerating(true);
 
     try {
-      const canvas = await generateCanvas();
-      if (!canvas) return;
+      const dataUrl = await toPng(cardRef.current, {
+        quality: 1,
+        pixelRatio: 2,
+        backgroundColor: '#0a0a0a',
+      });
 
       const link = document.createElement('a');
       link.download = `paradex-wrapped-2025-${data.username}.png`;
-      link.href = canvas.toDataURL('image/png');
+      link.href = dataUrl;
+      document.body.appendChild(link);
       link.click();
+      document.body.removeChild(link);
+
       setDownloaded(true);
       setTimeout(() => setDownloaded(false), 2000);
     } catch (error) {
       console.error('Error downloading image:', error);
+      alert('Error generating image. Please try again.');
     } finally {
       setIsGenerating(false);
     }
@@ -1411,11 +1407,16 @@ function PersonalFinaleSlide({ data }) {
     setIsGenerating(true);
 
     try {
-      const canvas = await generateCanvas();
-      if (!canvas) return;
+      const blob = await toBlob(cardRef.current, {
+        quality: 1,
+        pixelRatio: 2,
+        backgroundColor: '#0a0a0a',
+      });
 
-      // Convert canvas to blob
-      const blob = await new Promise((resolve) => canvas.toBlob(resolve, 'image/png'));
+      if (!blob) {
+        alert('Error generating image. Please try again.');
+        return;
+      }
 
       // Try clipboard API (Chrome, modern browsers)
       if (navigator.clipboard && window.ClipboardItem) {
@@ -1425,7 +1426,7 @@ function PersonalFinaleSlide({ data }) {
           setTimeout(() => setCopied(false), 2000);
           return;
         } catch (clipboardError) {
-          // Clipboard failed, show alert
+          console.error('Clipboard error:', clipboardError);
           alert('Copy not supported on this browser. Use the Download button instead.');
         }
       } else {
@@ -1433,6 +1434,7 @@ function PersonalFinaleSlide({ data }) {
       }
     } catch (error) {
       console.error('Error generating image:', error);
+      alert('Error generating image. Please try again.');
     } finally {
       setIsGenerating(false);
     }
