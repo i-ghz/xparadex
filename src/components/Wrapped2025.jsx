@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useCallback, useRef, useMemo } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ChevronLeft, ChevronRight, Sparkles, TrendingUp, Users, Activity, Zap, DollarSign, Heart, Shield, Rocket, ArrowRight, User, Globe, Key, Eye, EyeOff, Lock, ExternalLink, AlertCircle, Loader2, Trophy, Clock, BarChart2, Star, Coins, Copy, Check, ArrowUp, ArrowDown } from 'lucide-react';
+import { ChevronLeft, ChevronRight, Sparkles, TrendingUp, Users, Activity, Zap, DollarSign, Heart, Shield, Rocket, ArrowRight, User, Globe, Key, Eye, EyeOff, Lock, ExternalLink, AlertCircle, Loader2, Trophy, Clock, BarChart2, Star, Coins, Copy, Check, ArrowUp, ArrowDown, Download } from 'lucide-react';
 import { useParadexAccount } from '../hooks/useParadexAccount';
 import html2canvas from 'html2canvas';
 
@@ -1372,43 +1372,65 @@ function PersonalFinaleSlide({ data }) {
   const cardRef = useRef(null);
   const [copied, setCopied] = useState(false);
   const [isGenerating, setIsGenerating] = useState(false);
+  const [downloaded, setDownloaded] = useState(false);
+
+  const generateCanvas = async () => {
+    if (!cardRef.current) return null;
+    return await html2canvas(cardRef.current, {
+      backgroundColor: '#0a0a0a',
+      scale: 2,
+      logging: false,
+      useCORS: true,
+      allowTaint: true,
+    });
+  };
+
+  const downloadImage = async () => {
+    if (!cardRef.current || isGenerating) return;
+    setIsGenerating(true);
+
+    try {
+      const canvas = await generateCanvas();
+      if (!canvas) return;
+
+      const link = document.createElement('a');
+      link.download = `paradex-wrapped-2025-${data.username}.png`;
+      link.href = canvas.toDataURL('image/png');
+      link.click();
+      setDownloaded(true);
+      setTimeout(() => setDownloaded(false), 2000);
+    } catch (error) {
+      console.error('Error downloading image:', error);
+    } finally {
+      setIsGenerating(false);
+    }
+  };
 
   const copyCardToClipboard = async () => {
     if (!cardRef.current || isGenerating) return;
     setIsGenerating(true);
 
     try {
-      const canvas = await html2canvas(cardRef.current, {
-        backgroundColor: '#0a0a0a',
-        scale: 2,
-        logging: false,
-        useCORS: true,
-        allowTaint: true,
-      });
+      const canvas = await generateCanvas();
+      if (!canvas) return;
 
       // Convert canvas to blob
       const blob = await new Promise((resolve) => canvas.toBlob(resolve, 'image/png'));
 
-      // Try clipboard API first (Chrome, modern browsers)
+      // Try clipboard API (Chrome, modern browsers)
       if (navigator.clipboard && window.ClipboardItem) {
         try {
           await navigator.clipboard.write([new ClipboardItem({ 'image/png': blob })]);
           setCopied(true);
           setTimeout(() => setCopied(false), 2000);
-          setIsGenerating(false);
           return;
         } catch (clipboardError) {
-          console.log('Clipboard API failed, falling back to download');
+          // Clipboard failed, show alert
+          alert('Copy not supported on this browser. Use the Download button instead.');
         }
+      } else {
+        alert('Copy not supported on this browser. Use the Download button instead.');
       }
-
-      // Fallback: download the image
-      const link = document.createElement('a');
-      link.download = `paradex-wrapped-2025-${data.username}.png`;
-      link.href = canvas.toDataURL('image/png');
-      link.click();
-      setCopied(true);
-      setTimeout(() => setCopied(false), 2000);
     } catch (error) {
       console.error('Error generating image:', error);
     } finally {
@@ -1417,7 +1439,7 @@ function PersonalFinaleSlide({ data }) {
   };
 
   const shareOnX = () => {
-    const text = `My 2025 Paradex Wrapped 🎁\n\n📊 Volume: ${formatCurrency(data.totalVolume)}\n📈 Trades: ${data.totalTrades.toLocaleString()}\n💰 PnL: ${data.totalPnl >= 0 ? '+' : ''}${formatCurrency(data.totalPnl)}\n⭐ XP: ${formatNumber(data.totalXP, 0)}\n\nCheck yours at xpparadex.com!\n\n#Paradex #ParadexWrapped`;
+    const text = `My 2025 Paradex Wrapped 🎁\n\n📊 Volume: ${formatCurrency(data.totalVolume)}\n📈 Trades: ${data.totalTrades.toLocaleString()}\n💰 PnL: ${data.totalPnl >= 0 ? '+' : ''}${formatCurrency(data.totalPnl)}\n⭐ XP: ${formatNumber(data.totalXP, 0)}\n\nCheck yours at xparadex.xyz!\n\n#Paradex #ParadexWrapped`;
     window.open(`https://x.com/intent/tweet?text=${encodeURIComponent(text)}`, '_blank', 'noopener,noreferrer');
   };
 
@@ -1482,7 +1504,7 @@ function PersonalFinaleSlide({ data }) {
 
         <img src="/assets/character1.png" alt="Dave" className="absolute bottom-2 right-2 w-16 h-16 opacity-80 z-10" />
 
-        <div className="mt-3 text-center text-gray-600 text-[10px] relative z-10">xpparadex.com</div>
+        <div className="mt-3 text-center text-gray-600 text-[10px] relative z-10">xparadex.xyz</div>
       </motion.div>
 
       {/* Action Buttons */}
@@ -1490,28 +1512,40 @@ function PersonalFinaleSlide({ data }) {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.3 }}
-        className="flex gap-3 mt-6"
+        className="flex flex-wrap justify-center gap-3 mt-6"
       >
+        <button
+          onClick={(e) => { e.stopPropagation(); downloadImage(); }}
+          disabled={isGenerating}
+          className="px-5 py-3 bg-cyan-500 text-black font-bold rounded-xl hover:bg-cyan-400 transition-all flex items-center gap-2 disabled:opacity-50"
+        >
+          {isGenerating ? (
+            <Loader2 size={18} className="animate-spin" />
+          ) : downloaded ? (
+            <Check size={18} />
+          ) : (
+            <Download size={18} />
+          )}
+          {downloaded ? 'Downloaded!' : 'Download'}
+        </button>
         <button
           onClick={(e) => { e.stopPropagation(); copyCardToClipboard(); }}
           disabled={isGenerating}
           className="px-5 py-3 bg-white/10 text-white font-bold rounded-xl hover:bg-white/20 transition-all flex items-center gap-2 border border-white/10 disabled:opacity-50"
         >
-          {isGenerating ? (
-            <Loader2 size={18} className="animate-spin" />
-          ) : copied ? (
+          {copied ? (
             <Check size={18} className="text-green-400" />
           ) : (
             <Copy size={18} />
           )}
-          {isGenerating ? 'Generating...' : copied ? 'Copied!' : 'Copy Image'}
+          {copied ? 'Copied!' : 'Copy'}
         </button>
         <button
           onClick={(e) => { e.stopPropagation(); shareOnX(); }}
           className="px-5 py-3 bg-white text-black font-bold rounded-xl hover:bg-gray-200 transition-all flex items-center gap-2"
         >
           <span className="font-black text-lg">𝕏</span>
-          Share on X
+          Share
         </button>
       </motion.div>
 
