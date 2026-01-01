@@ -62,7 +62,7 @@ export function PNLCard({ xp, estimatedValue, selectedCharacter, onCharacterSele
         const unit = season?.id === 'TAP' ? 'Points' : 'XP';
         const text = `I'm estimating my Paradex Airdrop! 🪂\n\n${season?.label}\n${unit}: ${xp}\nEst. Value: $${estimatedValue}\n\nCheck yours at: xparadex.xyz @paradex \n\nParadexio`;
         const url = `https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}`;
-        window.open(url, '_blank');
+        window.open(url, '_blank', 'noopener,noreferrer');
     };
 
     return (

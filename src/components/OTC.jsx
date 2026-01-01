@@ -64,7 +64,7 @@ export function OTC() {
 
         const message = `I want to sell ${sellAmount} XP at $${sellPrice} per XP.`;
         const encodedMessage = encodeURIComponent(message);
-        window.open(`https://t.me/Felixlamenasse?text=${encodedMessage}`, '_blank');
+        window.open(`https://t.me/Felixlamenasse?text=${encodedMessage}`, '_blank', 'noopener,noreferrer');
     };
 
     // Pagination Logic for Reviews
